@@ -16,12 +16,18 @@ public class Cuffie extends Prodotto{
         this.isWireless = false;
     }
 
+    public Cuffie(String nome , String marca , BigDecimal prezzo ,String colore, boolean isWireless){
+
+        super(  nome , marca ,  prezzo );
+        this.colore = colore ;
+        this.isWireless = isWireless;        
+    }
+
     public Cuffie(String nome , String marca , BigDecimal prezzo , BigDecimal iva ,String colore, boolean isWireless){
 
         super(  nome , marca ,  prezzo , iva);
         this.colore = colore ;
-        this.isWireless = isWireless;
-        
+        this.isWireless = isWireless;        
     }
 
     //metodi

@@ -16,6 +16,12 @@ public class Smartphone extends Prodotto{
         this.memoria = 0 ;
 
     }
+
+    Smartphone( String nome , String marca , BigDecimal prezzo , String IMEI , int memoria){
+        super(  nome , marca ,  prezzo );
+        this.IMEI = IMEI;
+        this.memoria = memoria;
+    }
     
     Smartphone( String nome , String marca , BigDecimal prezzo , BigDecimal iva , String IMEI , int memoria){
         super(  nome , marca ,  prezzo , iva);
