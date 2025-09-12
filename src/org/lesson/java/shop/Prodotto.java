@@ -70,5 +70,23 @@ public class Prodotto {
         this.iva = iva.divide(new BigDecimal(100),2 ,RoundingMode.HALF_UP );
     }
 
+    public BigDecimal getPrezzoIvato(){
+        if(prezzo != null && iva != null){
+            return this.prezzo.add(this.prezzo.multiply(iva)).setScale(2, RoundingMode.DOWN);
+        }
+        return null;
+         
+     }
+
+
+    @Override
+    public String toString(){
+        if(nome != null){
+
+            return codice + " - " + nome;
+        }
+        return null;
+    }
+
 
 }
