@@ -12,6 +12,7 @@ public class Prodotto {
     private String marca;
     private BigDecimal prezzo;
     private BigDecimal iva;
+    
 
     //costruttore
     public Prodotto(){
@@ -80,7 +81,7 @@ public class Prodotto {
     }
 
     public BigDecimal getPrezzoIvato(){
-        if(prezzo != null && iva != null){
+        if(this.prezzo != null && iva != null){
             return this.prezzo.add(this.prezzo.multiply(iva)).setScale(2, RoundingMode.HALF_UP);
         }
         return null;
@@ -88,13 +89,11 @@ public class Prodotto {
      }
 
 
-    public BigDecimal getDiscountPrice(BigDecimal discount){
 
-        if(prezzo != null &&  discount.compareTo(BigDecimal.ZERO) > 0 ){
-
-            return this.prezzo.subtract(this.prezzo.multiply(discount).divide(new BigDecimal(100) , 2 ,RoundingMode.HALF_UP ));
-
-        }return getPrezzoIvato();
+    public BigDecimal getDiscountPrice(){
+        BigDecimal scontoBase = new BigDecimal("0.02"); // 2%
+        BigDecimal prezzoScontatoSenzaIva = this.prezzo.subtract(this.prezzo.multiply(scontoBase));
+        return prezzoScontatoSenzaIva.add(prezzoScontatoSenzaIva.multiply(this.iva)).setScale(2, RoundingMode.HALF_UP);
     }
 
     @Override
