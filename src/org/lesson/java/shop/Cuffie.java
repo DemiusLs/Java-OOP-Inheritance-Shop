@@ -51,6 +51,6 @@ public class Cuffie extends Prodotto{
 
     @Override
     public String toString(){
-        return super.toString() + "\nColore: " + getColore() + "\nWireless: " + getIsWireless();
+        return super.toString() + "\nColore: " + getColore() + "\nWireless: " + getIsWireless() + "\nPrezzo: " + getPrezzoIvato();
     }
 }

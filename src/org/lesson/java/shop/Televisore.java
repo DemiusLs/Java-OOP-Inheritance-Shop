@@ -50,6 +50,6 @@ public class Televisore extends Prodotto{
 
     @Override
     public String toString(){
-        return super.toString() + "\nDimensioni: " + getDimensioni() + " pollici" + "\nSmartTV: " + getIsSmart();
+        return super.toString() + "\nDimensioni: " + getDimensioni() + " pollici" + "\nSmartTV: " + getIsSmart() + "\nPrezzo: " + getPrezzoIvato();
     }
 }

@@ -88,6 +88,14 @@ public class Prodotto {
      }
 
 
+    public BigDecimal getDiscountPrice(BigDecimal discount){
+
+        if(prezzo != null &&  discount.compareTo(BigDecimal.ZERO) > 0 ){
+
+            return this.prezzo.subtract(this.prezzo.multiply(discount).divide(new BigDecimal(100) , 2 ,RoundingMode.HALF_UP ));
+
+        }return getPrezzoIvato();
+    }
 
     @Override
     public String toString(){
