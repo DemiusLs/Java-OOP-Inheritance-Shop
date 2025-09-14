@@ -54,7 +54,7 @@ public class Cuffie extends Prodotto{
         
        // Definisco la percentuale di sconto
         BigDecimal percentualeSconto = new BigDecimal("0.02"); // Sconto di default
-        if (this.isWireless) {
+        if (!this.isWireless) {
             percentualeSconto = new BigDecimal("0.07"); // Sconto specifico del 7%
         }
 
@@ -70,6 +70,6 @@ public class Cuffie extends Prodotto{
 
     @Override
     public String toString(){
-        return super.toString() + "\nColore: " + getColore() + "\nWireless: " + getIsWireless() + "\nPrezzo: " + getPrezzoIvato();
+        return super.toString() + "\nColore: " + getColore() + "\nWireless: " + getIsWireless() + "\nPrezzo: " + getPrezzoIvato()+ "\nPrezo Scontato: "  +getDiscountPrice();
     }
 }

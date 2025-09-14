@@ -52,7 +52,7 @@ public class Televisore extends Prodotto{
         
        // Definisco la percentuale di sconto
         BigDecimal percentualeSconto = new BigDecimal("0.02"); // Sconto di default
-        if (this.isSmart) {
+        if (!this.isSmart) {
             percentualeSconto = new BigDecimal("0.1"); // Sconto specifico del 10%
         }
 
@@ -68,6 +68,6 @@ public class Televisore extends Prodotto{
 
     @Override
     public String toString(){
-        return super.toString() + "\nDimensioni: " + getDimensioni() + " pollici" + "\nSmartTV: " + getIsSmart() + "\nPrezzo: " + getPrezzoIvato();
+        return super.toString() + "\nDimensioni: " + getDimensioni() + " pollici" + "\nSmartTV: " + getIsSmart() + "\nPrezzo: " + getPrezzoIvato() + "\nPrezo Scontato: "  +getDiscountPrice();
     }
 }

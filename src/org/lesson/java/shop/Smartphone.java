@@ -70,7 +70,7 @@ public class Smartphone extends Prodotto{
 
     @Override
     public String toString(){
-        return super.toString() + "\nCodice IMEI: " + getIMEI() + "\nGiga: " + getMemoria() + "\nPrezzo: " + getPrezzoIvato();
+        return super.toString() + "\nCodice IMEI: " + getIMEI() + "\nGiga: " + getMemoria() + "\nPrezzo: " + getPrezzoIvato() + "\nPrezo Scontato: "  +getDiscountPrice();
     }
     
 
